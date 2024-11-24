@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通讯录</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script defer src="3.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"] {
+            margin: 5px 0;
+            padding: 8px;
+            width: 200px;
+        }
+
+        button {
+            margin: 5px;
+            padding: 8px 12px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>通讯录</h1>
+
+    <form id="contactForm">
+        <input type="hidden" id="contactId">
+        <label for="name">姓名:</label>
+        <input type="text" id="name" required>
+        <label for="phone">电话:</label>
+        <input type="tel" id="phone">
+        <label for="email">邮箱:</label>
+        <input type="email" id="email">
+        <button type="submit">添加/修改</button>
+    </form>
+
+    <div>
+        <button id="exportButton">导出 Excel</button>
+        <input type="file" id="importFile" accept=".xlsx">
+    </div>
+
+    <table id="contactTable">
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>电话</th>
+                <th>邮箱</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 联系人列表 -->
+        </tbody>
+    </table>
+
+</body>
+
+</html>
